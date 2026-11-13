@@ -1,0 +1,15 @@
+
+apiVersion: v1
+kind: Pod
+
+metadata:
+  name: django-configmap-pod
+
+spec:
+  containers:
+    - name: django-container
+      image: nginx:latest
+
+      envFrom:
+        - configMapRef:
+            name: django-config
